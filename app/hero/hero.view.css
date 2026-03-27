@@ -1,0 +1,42 @@
+[bog_weather_app_hero] {
+	background: linear-gradient(180deg, #4FC3F7, #81D4FA);
+	transition: background 0.5s ease;
+}
+
+[bog_weather_app_hero_scene="sunny"] {
+	background: linear-gradient(180deg, #4FC3F7, #81D4FA);
+}
+
+[bog_weather_app_hero_scene="cloudy"] {
+	background: linear-gradient(180deg, #90A4AE, #B0BEC5);
+}
+
+[bog_weather_app_hero_scene="rain"] {
+	background: linear-gradient(180deg, #546E7A, #78909C);
+}
+
+[bog_weather_app_hero_scene="drizzle"] {
+	background: linear-gradient(180deg, #607D8B, #90A4AE);
+}
+
+[bog_weather_app_hero_scene="snow"] {
+	background: linear-gradient(180deg, #CFD8DC, #ECEFF1);
+	color: #37474F;
+}
+
+[bog_weather_app_hero_scene="night_clear"] {
+	background: linear-gradient(180deg, #1A237E, #283593);
+}
+
+[bog_weather_app_hero_scene="night_cloudy"] {
+	background: linear-gradient(180deg, #1A237E, #37474F);
+}
+
+[bog_weather_app_hero_scene="thunder"] {
+	background: linear-gradient(180deg, #37474F, #455A64);
+}
+
+[bog_weather_app_hero_scene="foggy"] {
+	background: linear-gradient(180deg, #B0BEC5, #CFD8DC);
+	color: #455A64;
+}

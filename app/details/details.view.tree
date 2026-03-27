@@ -1,0 +1,36 @@
+$bog_weather_app_details $mol_view
+	wind_speed 0
+	wind_direction 0
+	humidity 0
+	uv_index 0
+	pressure 0
+	sunrise \
+	sunset \
+	sub /
+		<= Wind $bog_weather_app_details_card
+			title \Ветер
+			value <= wind_text \
+		<= Humidity $bog_weather_app_details_card
+			title \Влажность
+			value <= humidity_text \
+		<= UV $bog_weather_app_details_card
+			title \UV-индекс
+			value <= uv_text \
+		<= Pressure $bog_weather_app_details_card
+			title \Давление
+			value <= pressure_text \
+		<= Sunrise $bog_weather_app_details_card
+			title \Восход
+			value <= sunrise_text \
+		<= Sunset $bog_weather_app_details_card
+			title \Закат
+			value <= sunset_text \
+
+$bog_weather_app_details_card $mol_view
+	title \
+	value \
+	sub /
+		<= Title $mol_view
+			sub / <= title
+		<= Value $mol_view
+			sub / <= value

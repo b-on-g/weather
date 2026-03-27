@@ -1,0 +1,25 @@
+$bog_weather_app_hero $mol_view
+	weather_code 0
+	temperature 0
+	apparent_temperature 0
+	temp_max 0
+	temp_min 0
+	is_night false
+	attr *
+		^
+		bog_weather_app_hero_scene <= scene \sunny
+	sub /
+		<= Froggy $mol_image
+			uri <= froggy_uri \
+		<= Temp $mol_view
+			sub /
+				<= temp_text \
+		<= Description $mol_view
+			sub /
+				<= description_text \
+		<= Minmax $mol_view
+			sub /
+				<= minmax_text \
+		<= Feels $mol_view
+			sub /
+				<= feels_text \

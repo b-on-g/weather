@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- Sky background (winter) -->
+  <rect width="200" height="200" fill="#ECEFF1"/>
+  <!-- Snow ground -->
+  <ellipse cx="100" cy="192" rx="110" ry="30" fill="white"/>
+  <rect y="175" width="200" height="25" fill="white"/>
+
+  <!-- Snowflakes -->
+  <!-- Snowflake 1 -->
+  <g transform="translate(30,35)">
+    <line x1="0" y1="-9" x2="0" y2="9" stroke="#90A4AE" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="-9" y1="0" x2="9" y2="0" stroke="#90A4AE" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="-6" y1="-6" x2="6" y2="6" stroke="#90A4AE" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="6" y1="-6" x2="-6" y2="6" stroke="#90A4AE" stroke-width="1.5" stroke-linecap="round"/>
+  </g>
+  <!-- Snowflake 2 -->
+  <g transform="translate(160,50)">
+    <line x1="0" y1="-8" x2="0" y2="8" stroke="#90A4AE" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="-8" y1="0" x2="8" y2="0" stroke="#90A4AE" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="-5.5" y1="-5.5" x2="5.5" y2="5.5" stroke="#90A4AE" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="5.5" y1="-5.5" x2="-5.5" y2="5.5" stroke="#90A4AE" stroke-width="1.5" stroke-linecap="round"/>
+  </g>
+  <!-- Snowflake 3 -->
+  <g transform="translate(55,80)">
+    <line x1="0" y1="-7" x2="0" y2="7" stroke="#B0BEC5" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="-7" y1="0" x2="7" y2="0" stroke="#B0BEC5" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="-5" y1="-5" x2="5" y2="5" stroke="#B0BEC5" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="5" y1="-5" x2="-5" y2="5" stroke="#B0BEC5" stroke-width="1.5" stroke-linecap="round"/>
+  </g>
+  <!-- Snowflake 4 -->
+  <g transform="translate(150,90)">
+    <line x1="0" y1="-7" x2="0" y2="7" stroke="#B0BEC5" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="-7" y1="0" x2="7" y2="0" stroke="#B0BEC5" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="-5" y1="-5" x2="5" y2="5" stroke="#B0BEC5" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="5" y1="-5" x2="-5" y2="5" stroke="#B0BEC5" stroke-width="1.5" stroke-linecap="round"/>
+  </g>
+  <!-- Snowflake 5 -->
+  <g transform="translate(90,22)">
+    <line x1="0" y1="-6" x2="0" y2="6" stroke="#CFD8DC" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="-6" y1="0" x2="6" y2="0" stroke="#CFD8DC" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="-4" y1="-4" x2="4" y2="4" stroke="#CFD8DC" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="4" y1="-4" x2="-4" y2="4" stroke="#CFD8DC" stroke-width="1.5" stroke-linecap="round"/>
+  </g>
+  <!-- Snowflake 6 small -->
+  <circle cx="175" cy="130" r="2" fill="#CFD8DC"/>
+  <circle cx="25" cy="120" r="2" fill="#CFD8DC"/>
+  <circle cx="130" cy="55" r="1.5" fill="#B0BEC5"/>
+  <circle cx="70" cy="38" r="1.5" fill="#B0BEC5"/>
+
+  <!-- Scarf (behind head) -->
+  <path d="M78 158 Q100 148 122 158" stroke="#E53935" stroke-width="10" fill="none" stroke-linecap="round"/>
+  <!-- Scarf tail -->
+  <path d="M78 158 Q68 165 70 175" stroke="#E53935" stroke-width="8" fill="none" stroke-linecap="round"/>
+
+  <!-- Frog body -->
+  <ellipse cx="100" cy="170" rx="30" ry="22" fill="#4CAF50"/>
+  <!-- Frog head -->
+  <circle cx="100" cy="146" r="21" fill="#4CAF50"/>
+  <!-- Frog belly -->
+  <ellipse cx="100" cy="172" rx="18" ry="13" fill="#A5D6A7"/>
+
+  <!-- Winter hat -->
+  <!-- Hat brim -->
+  <ellipse cx="100" cy="127" rx="24" ry="6" fill="#1A237E"/>
+  <!-- Hat body -->
+  <rect x="83" y="100" width="34" height="28" rx="4" fill="#283593"/>
+  <!-- Hat stripe -->
+  <rect x="83" y="118" width="34" height="6" fill="#E53935"/>
+  <!-- Hat pompom -->
+  <circle cx="100" cy="100" r="8" fill="white"/>
+
+  <!-- Frog eyes -->
+  <circle cx="88" cy="132" r="8.5" fill="#66BB6A"/>
+  <circle cx="112" cy="132" r="8.5" fill="#66BB6A"/>
+  <circle cx="88" cy="132" r="5.5" fill="white"/>
+  <circle cx="112" cy="132" r="5.5" fill="white"/>
+  <circle cx="88" cy="132" r="2.8" fill="#111"/>
+  <circle cx="112" cy="132" r="2.8" fill="#111"/>
+  <circle cx="89" cy="131" r="1.1" fill="white"/>
+  <circle cx="113" cy="131" r="1.1" fill="white"/>
+
+  <!-- Frog mouth (chilly, tight smile) -->
+  <path d="M94 150 Q100 154 106 150" stroke="#2E7D32" stroke-width="2" fill="none" stroke-linecap="round"/>
+
+  <!-- Frog arms (hugging self for warmth) -->
+  <ellipse cx="78" cy="166" rx="12" ry="7" fill="#4CAF50" transform="rotate(-30 78 166)"/>
+  <ellipse cx="122" cy="166" rx="12" ry="7" fill="#4CAF50" transform="rotate(30 122 166)"/>
+
+  <!-- Scarf front layer -->
+  <path d="M80 157 Q100 150 120 157" stroke="#E53935" stroke-width="9" fill="none" stroke-linecap="round" opacity="0.9"/>
+</svg>

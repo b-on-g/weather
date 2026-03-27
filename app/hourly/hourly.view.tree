@@ -1,0 +1,32 @@
+$bog_weather_app_hourly_view $mol_view
+	hourly_data null
+	sub /
+		<= Tabs $mol_switch
+			value? <=> tab? \precip
+			options *
+				precip \Осадки
+				wind \Ветер
+				humidity \Влажность
+		<= Scroll $mol_scroll
+			scroll_top 0
+			sub /
+				<= Row $mol_view
+					sub <= hour_items /
+	Hour*0 $bog_weather_app_hourly_item
+		index <= hour_index* 0
+		hourly_data <= hourly_data
+		tab <= tab? \precip
+
+$bog_weather_app_hourly_item $mol_view
+	index 0
+	hourly_data null
+	tab \precip
+	sub /
+		<= Time $mol_view
+			sub / <= time_text \
+		<= Icon $mol_image
+			uri <= icon_uri \
+		<= Temp $mol_view
+			sub / <= temp_text \
+		<= Secondary $mol_view
+			sub / <= secondary_text \

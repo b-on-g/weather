@@ -1,0 +1,40 @@
+$bog_weather_app $mol_scroll
+	sub /
+		<= Body $mol_list
+			rows /
+				<= Header $mol_view
+					sub /
+						<= City_name $mol_view
+							sub / <= city_name \Москва
+						<= Search $bog_weather_app_search
+							event_select? <=> on_city_select? null
+						<= Geolocate $mol_button_minor
+							click? <=> geolocate? null
+							sub /
+								<= Geolocate_icon $mol_icon_crosshairs_gps
+				<= Hero $bog_weather_app_hero
+					weather_code <= current_weather_code 0
+					temperature <= current_temperature 0
+					apparent_temperature <= current_apparent_temperature 0
+					temp_max <= today_temp_max 0
+					temp_min <= today_temp_min 0
+					is_night <= is_night false
+				<= Hourly $bog_weather_app_hourly_view
+					hourly_data <= hourly_data null
+				<= Daily $bog_weather_app_daily
+					daily_data <= daily_data null
+				<= Details $bog_weather_app_details
+					wind_speed <= current_wind_speed 0
+					wind_direction <= current_wind_direction 0
+					humidity <= current_humidity 0
+					uv_index <= current_uv_index 0
+					pressure <= current_pressure 0
+					sunrise <= today_sunrise \
+					sunset <= today_sunset \
+	plugins /
+		<= Theme $bog_theme_auto
+			theme_light \$mol_theme_calm_light
+			theme_dark \$mol_theme_calm_dark
+			themes /
+				\$mol_theme_calm_light
+				\$mol_theme_calm_dark

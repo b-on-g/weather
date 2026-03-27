@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- Sky background -->
+  <rect width="200" height="200" fill="#B0C4DE"/>
+  <!-- Ground -->
+  <rect y="160" width="200" height="40" fill="#8FBC8F"/>
+
+  <!-- Cloud 1 (large) -->
+  <ellipse cx="90" cy="40" rx="45" ry="22" fill="#BDBDBD"/>
+  <circle cx="60" cy="45" r="18" fill="#BDBDBD"/>
+  <circle cx="90" cy="32" r="22" fill="#BDBDBD"/>
+  <circle cx="120" cy="42" r="16" fill="#BDBDBD"/>
+
+  <!-- Cloud 2 (smaller) -->
+  <ellipse cx="165" cy="65" rx="28" ry="14" fill="#CFD8DC"/>
+  <circle cx="148" cy="68" r="12" fill="#CFD8DC"/>
+  <circle cx="168" cy="58" r="14" fill="#CFD8DC"/>
+  <circle cx="182" cy="65" r="10" fill="#CFD8DC"/>
+
+  <!-- Cloud 3 (small left) -->
+  <ellipse cx="25" cy="75" rx="20" ry="10" fill="#CFD8DC"/>
+  <circle cx="15" cy="78" r="9" fill="#CFD8DC"/>
+  <circle cx="28" cy="70" r="11" fill="#CFD8DC"/>
+
+  <!-- Frog body -->
+  <ellipse cx="100" cy="168" rx="32" ry="24" fill="#4CAF50"/>
+  <!-- Frog head -->
+  <circle cx="100" cy="140" r="22" fill="#4CAF50"/>
+  <!-- Frog belly -->
+  <ellipse cx="100" cy="170" rx="20" ry="14" fill="#A5D6A7"/>
+
+  <!-- Frog eyes (looking up) -->
+  <circle cx="88" cy="124" r="9" fill="#66BB6A"/>
+  <circle cx="112" cy="124" r="9" fill="#66BB6A"/>
+  <circle cx="88" cy="124" r="6" fill="white"/>
+  <circle cx="112" cy="124" r="6" fill="white"/>
+  <!-- Pupils looking upward -->
+  <circle cx="88" cy="121" r="3" fill="#111"/>
+  <circle cx="112" cy="121" r="3" fill="#111"/>
+  <circle cx="89" cy="120" r="1.2" fill="white"/>
+  <circle cx="113" cy="120" r="1.2" fill="white"/>
+
+  <!-- Frog mouth (neutral/curious) -->
+  <path d="M93 152 Q100 156 107 152" stroke="#2E7D32" stroke-width="2" fill="none" stroke-linecap="round"/>
+
+  <!-- Frog arms (one shading eyes to look up) -->
+  <ellipse cx="75" cy="162" rx="11" ry="7" fill="#4CAF50" transform="rotate(-30 75 162)"/>
+  <!-- Hand over brow -->
+  <ellipse cx="81" cy="133" rx="12" ry="6" fill="#4CAF50" transform="rotate(-10 81 133)"/>
+  <!-- Other arm -->
+  <ellipse cx="126" cy="165" rx="11" ry="7" fill="#4CAF50" transform="rotate(25 126 165)"/>
+</svg>

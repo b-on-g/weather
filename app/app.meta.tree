@@ -1,0 +1,17 @@
+include \/mol/offline/install
+include \/mol/fetch
+include \/mol/schema
+include \/mol/search
+include \/mol/switch
+include \/mol/scroll
+include \/mol/pop
+include \/mol/icon/magnify
+include \/mol/icon/crosshairs/gps
+include \/mol/image
+include \/mol/expander
+include \/bog/theme/auto
+include \/mol/state/local
+include \/mol/state/arg
+deploy \/bog/weather/app/hero/froggy
+deploy \/bog/weather/app/icons
+deploy \/bog/weather/assets

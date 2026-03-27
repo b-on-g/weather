@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- Sky background (stormy) -->
+  <rect width="200" height="200" fill="#607D8B"/>
+  <!-- Ground -->
+  <rect y="165" width="200" height="35" fill="#5D8A5E"/>
+
+  <!-- Dark cloud -->
+  <ellipse cx="100" cy="28" rx="55" ry="22" fill="#455A64"/>
+  <circle cx="62" cy="34" r="20" fill="#455A64"/>
+  <circle cx="100" cy="20" r="24" fill="#455A64"/>
+  <circle cx="135" cy="32" r="18" fill="#455A64"/>
+
+  <!-- Heavy rain streaks -->
+  <line x1="35" y1="58" x2="28" y2="78" stroke="#90CAF9" stroke-width="2" stroke-linecap="round" opacity="0.85"/>
+  <line x1="52" y1="55" x2="45" y2="75" stroke="#90CAF9" stroke-width="2" stroke-linecap="round" opacity="0.85"/>
+  <line x1="68" y1="58" x2="61" y2="78" stroke="#90CAF9" stroke-width="2" stroke-linecap="round" opacity="0.85"/>
+  <line x1="85" y1="55" x2="78" y2="75" stroke="#90CAF9" stroke-width="2" stroke-linecap="round" opacity="0.85"/>
+  <line x1="102" y1="57" x2="95" y2="77" stroke="#90CAF9" stroke-width="2" stroke-linecap="round" opacity="0.85"/>
+  <line x1="120" y1="55" x2="113" y2="75" stroke="#90CAF9" stroke-width="2" stroke-linecap="round" opacity="0.85"/>
+  <line x1="137" y1="58" x2="130" y2="78" stroke="#90CAF9" stroke-width="2" stroke-linecap="round" opacity="0.85"/>
+  <line x1="155" y1="55" x2="148" y2="75" stroke="#90CAF9" stroke-width="2" stroke-linecap="round" opacity="0.85"/>
+  <line x1="172" y1="58" x2="165" y2="78" stroke="#90CAF9" stroke-width="2" stroke-linecap="round" opacity="0.85"/>
+
+  <line x1="27" y1="88" x2="20" y2="108" stroke="#90CAF9" stroke-width="2" stroke-linecap="round" opacity="0.75"/>
+  <line x1="43" y1="85" x2="36" y2="105" stroke="#90CAF9" stroke-width="2" stroke-linecap="round" opacity="0.75"/>
+  <line x1="160" y1="82" x2="153" y2="102" stroke="#90CAF9" stroke-width="2" stroke-linecap="round" opacity="0.75"/>
+  <line x1="178" y1="88" x2="171" y2="108" stroke="#90CAF9" stroke-width="2" stroke-linecap="round" opacity="0.75"/>
+  <line x1="22" y1="115" x2="15" y2="135" stroke="#90CAF9" stroke-width="2" stroke-linecap="round" opacity="0.65"/>
+  <line x1="38" y1="112" x2="31" y2="132" stroke="#90CAF9" stroke-width="2" stroke-linecap="round" opacity="0.65"/>
+  <line x1="163" y1="110" x2="156" y2="130" stroke="#90CAF9" stroke-width="2" stroke-linecap="round" opacity="0.65"/>
+  <line x1="180" y1="115" x2="173" y2="135" stroke="#90CAF9" stroke-width="2" stroke-linecap="round" opacity="0.65"/>
+
+  <!-- Puddles -->
+  <ellipse cx="65" cy="175" rx="25" ry="6" fill="#78909C" opacity="0.6"/>
+  <ellipse cx="148" cy="178" rx="18" ry="5" fill="#78909C" opacity="0.6"/>
+
+  <!-- Large umbrella -->
+  <!-- Umbrella handle -->
+  <path d="M100 182 Q94 192 84 192" stroke="#4A2C0A" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <!-- Umbrella stick -->
+  <line x1="100" y1="118" x2="100" y2="182" stroke="#4A2C0A" stroke-width="4" stroke-linecap="round"/>
+  <!-- Umbrella canopy big -->
+  <path d="M55 116 Q100 82 145 116" fill="#1565C0" stroke="#0D47A1" stroke-width="2"/>
+  <path d="M55 116 Q70 102 85 116" fill="#0D47A1" opacity="0.45"/>
+  <path d="M85 116 Q100 102 115 116" fill="#0D47A1" opacity="0.45"/>
+  <path d="M115 116 Q130 102 145 116" fill="#0D47A1" opacity="0.45"/>
+  <!-- Umbrella tip -->
+  <circle cx="100" cy="83" r="4" fill="#0D47A1"/>
+
+  <!-- Water drip from umbrella -->
+  <line x1="55" y1="116" x2="52" y2="126" stroke="#90CAF9" stroke-width="2" stroke-linecap="round"/>
+  <line x1="145" y1="116" x2="142" y2="126" stroke="#90CAF9" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- Frog body -->
+  <ellipse cx="100" cy="174" rx="28" ry="20" fill="#388E3C"/>
+  <!-- Frog head -->
+  <circle cx="100" cy="152" r="20" fill="#388E3C"/>
+  <!-- Frog belly -->
+  <ellipse cx="100" cy="176" rx="17" ry="12" fill="#81C784"/>
+
+  <!-- Frog eyes (big, expressive) -->
+  <circle cx="89" cy="137" r="8.5" fill="#43A047"/>
+  <circle cx="111" cy="137" r="8.5" fill="#43A047"/>
+  <circle cx="89" cy="137" r="5.5" fill="white"/>
+  <circle cx="111" cy="137" r="5.5" fill="white"/>
+  <circle cx="89" cy="137" r="2.8" fill="#111"/>
+  <circle cx="111" cy="137" r="2.8" fill="#111"/>
+  <circle cx="90" cy="136" r="1.1" fill="white"/>
+  <circle cx="112" cy="136" r="1.1" fill="white"/>
+
+  <!-- Frog mouth (grumpy/resigned) -->
+  <path d="M94 161 Q100 158 106 161" stroke="#2E7D32" stroke-width="2" fill="none" stroke-linecap="round"/>
+
+  <!-- Frog arm holding umbrella -->
+  <path d="M112 158 Q114 140 100 120" stroke="#388E3C" stroke-width="7" fill="none" stroke-linecap="round"/>
+  <!-- Other arm tucked -->
+  <ellipse cx="77" cy="170" rx="10" ry="6" fill="#388E3C" transform="rotate(-20 77 170)"/>
+</svg>

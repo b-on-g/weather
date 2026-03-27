@@ -1,0 +1,27 @@
+$bog_weather_app_search $mol_pop
+	showed? <=> opened? false
+	align \bottom_right
+	event_select? null
+	anchor /
+		<= Trigger $mol_button_minor
+			click? <=> trigger_click? null
+			sub /
+				<= Trigger_icon $mol_icon_magnify
+	bubble /
+		<= Panel $mol_view
+			sub /
+				<= Input $mol_search
+					query? <=> query? \
+				<= Results $mol_list
+					rows <= result_rows /
+	Result*0 $bog_weather_app_search_row
+		location <= result_location* null
+		click? <=> result_click*? null
+
+$bog_weather_app_search_row $mol_button_minor
+	location null
+	sub /
+		<= Name $mol_view
+			sub / <= name_text \
+		<= Country $mol_view
+			sub / <= country_text \

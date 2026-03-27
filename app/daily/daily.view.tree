@@ -1,0 +1,35 @@
+$bog_weather_app_daily $mol_list
+	daily_data null
+	rows <= day_rows /
+	Day*0 $bog_weather_app_daily_row
+		index <= day_index* 0
+		daily_data <= daily_data
+
+$bog_weather_app_daily_row $mol_expander
+	index 0
+	daily_data null
+	label /
+		<= Summary $mol_view
+			sub /
+				<= Day_name $mol_view
+					sub / <= date_text \
+				<= Icon $mol_image
+					uri <= icon_uri \
+				<= Temp_min $mol_view
+					sub / <= temp_min_text \
+				<= Bar $mol_view
+				<= Temp_max $mol_view
+					sub / <= temp_max_text \
+	content /
+		<= Details $mol_view
+			sub /
+				<= Detail_sunrise $mol_view
+					sub / <= sunrise_text \
+				<= Detail_sunset $mol_view
+					sub / <= sunset_text \
+				<= Detail_uv $mol_view
+					sub / <= uv_text \
+				<= Detail_wind $mol_view
+					sub / <= wind_text \
+				<= Detail_precip $mol_view
+					sub / <= precip_text \

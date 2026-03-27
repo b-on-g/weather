@@ -6644,7 +6644,7 @@ var $;
                 if (!data)
                     return '';
                 const info = $bog_weather_app_code_info(data.weather_code[this.index()], false);
-                return `/bog/weather/app/icons/${info.icon}.svg`;
+                return `bog/weather/app/icons/${info.icon}.svg`;
             }
             temp_text() {
                 const data = this.hourly_data();
@@ -7465,7 +7465,9 @@ var $;
                     return [];
                 return data.time.map((_, i) => this.Day(i));
             }
-            day_index(id) { return id; }
+            day_index(id) {
+                return id;
+            }
         }
         __decorate([
             $mol_mem
@@ -7489,7 +7491,7 @@ var $;
                 if (!data)
                     return '';
                 const info = $bog_weather_app_code_info(data.weather_code[this.index()], false);
-                return `/bog/weather/app/icons/${info.icon}.svg`;
+                return `bog/weather/app/icons/${info.icon}.svg`;
             }
             temp_min_text() {
                 const data = this.daily_data();
@@ -10325,7 +10327,7 @@ var $;
                 return $bog_weather_app_code_info(this.weather_code(), this.is_night()).scene;
             }
             froggy_uri() {
-                return `/bog/weather/app/hero/froggy/${this.scene()}.svg`;
+                return `bog/weather/app/hero/froggy/${this.scene()}.svg`;
             }
             temp_text() {
                 return `${Math.round(this.temperature())}°`;

@@ -12,6 +12,8 @@ $bog_weather_app $mol_scroll
 							click? <=> geolocate? null
 							sub /
 								<= Geolocate_icon $mol_icon_crosshairs_gps
+						<= Theme_toggle $bog_theme_toggle
+							theme_auto <= Theme
 				<= Hero $bog_weather_app_hero
 					weather_code <= current_weather_code 0
 					temperature <= current_temperature 0

@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- Night sky background -->
+  <rect width="200" height="200" fill="#1A1F2E"/>
+  <!-- Ground (dark) -->
+  <rect y="162" width="200" height="38" fill="#152018"/>
+
+  <!-- Dim stars (partially obscured) -->
+  <circle cx="25" cy="20" r="1" fill="white" opacity="0.4"/>
+  <circle cx="55" cy="12" r="1" fill="white" opacity="0.3"/>
+  <circle cx="175" cy="18" r="1" fill="white" opacity="0.35"/>
+  <circle cx="188" cy="35" r="1" fill="white" opacity="0.3"/>
+  <circle cx="15" cy="55" r="1" fill="white" opacity="0.3"/>
+  <circle cx="185" cy="60" r="1" fill="white" opacity="0.25"/>
+
+  <!-- Moon (behind clouds, soft glow) -->
+  <circle cx="152" cy="42" r="22" fill="#FFF9C4" opacity="0.25"/>
+  <!-- Moon glow -->
+  <circle cx="152" cy="42" r="35" fill="#FFF9C4" opacity="0.06"/>
+
+  <!-- Large night clouds (covering moon) -->
+  <ellipse cx="140" cy="50" rx="62" ry="26" fill="#2C3E50"/>
+  <circle cx="105" cy="55" r="22" fill="#2C3E50"/>
+  <circle cx="140" cy="38" r="28" fill="#2C3E50"/>
+  <circle cx="173" cy="52" r="20" fill="#2C3E50"/>
+  <!-- Cloud edge glow from moon behind -->
+  <ellipse cx="155" cy="35" rx="30" ry="12" fill="#FFF9C4" opacity="0.08"/>
+
+  <!-- Second cloud -->
+  <ellipse cx="38" cy="75" rx="42" ry="18" fill="#263343"/>
+  <circle cx="15" cy="80" r="16" fill="#263343"/>
+  <circle cx="38" cy="65" r="20" fill="#263343"/>
+  <circle cx="60" cy="76" r="15" fill="#263343"/>
+
+  <!-- Frog silhouette (dark, moody) -->
+  <!-- Frog body silhouette -->
+  <ellipse cx="100" cy="172" rx="30" ry="22" fill="#1B3A1E"/>
+  <!-- Frog head silhouette -->
+  <circle cx="100" cy="150" r="21" fill="#1B3A1E"/>
+  <!-- Frog belly (slightly lighter) -->
+  <ellipse cx="100" cy="174" rx="18" ry="13" fill="#243D27"/>
+
+  <!-- Frog eyes (glow slightly in dark) -->
+  <circle cx="88" cy="135" r="9" fill="#1B3A1E"/>
+  <circle cx="112" cy="135" r="9" fill="#1B3A1E"/>
+  <!-- Eye whites with dim moonlight reflection -->
+  <circle cx="88" cy="135" r="6" fill="#D4E6D8" opacity="0.55"/>
+  <circle cx="112" cy="135" r="6" fill="#D4E6D8" opacity="0.55"/>
+  <!-- Pupils -->
+  <circle cx="88" cy="135" r="3.2" fill="#0A1208"/>
+  <circle cx="112" cy="135" r="3.2" fill="#0A1208"/>
+  <!-- Faint eye glow (amphibian tapetum) -->
+  <circle cx="88" cy="135" r="2" fill="#A5D6A7" opacity="0.35"/>
+  <circle cx="112" cy="135" r="2" fill="#A5D6A7" opacity="0.35"/>
+
+  <!-- Frog mouth (neutral) -->
+  <path d="M94 158 Q100 160 106 158" stroke="#152018" stroke-width="2" fill="none" stroke-linecap="round"/>
+
+  <!-- Frog arms (resting) -->
+  <ellipse cx="77" cy="170" rx="11" ry="6" fill="#1B3A1E" transform="rotate(-15 77 170)"/>
+  <ellipse cx="123" cy="170" rx="11" ry="6" fill="#1B3A1E" transform="rotate(15 123 170)"/>
+
+  <!-- Frog eye spots/bulges on top of head -->
+  <circle cx="88" cy="132" r="10" fill="#1B3A1E"/>
+  <circle cx="112" cy="132" r="10" fill="#1B3A1E"/>
+
+  <!-- Lily pad / ground base -->
+  <ellipse cx="100" cy="186" rx="40" ry="10" fill="#0F1A10"/>
+</svg>

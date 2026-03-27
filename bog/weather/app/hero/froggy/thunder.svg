@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- Sky background (stormy dark) -->
+  <rect width="200" height="200" fill="#37474F"/>
+  <!-- Ground -->
+  <rect y="162" width="200" height="38" fill="#4A6741"/>
+
+  <!-- Storm clouds -->
+  <ellipse cx="100" cy="32" rx="60" ry="24" fill="#263238"/>
+  <circle cx="58" cy="38" r="22" fill="#263238"/>
+  <circle cx="100" cy="22" r="26" fill="#263238"/>
+  <circle cx="138" cy="36" r="20" fill="#263238"/>
+  <!-- Cloud highlight -->
+  <ellipse cx="88" cy="20" rx="18" ry="8" fill="#37474F" opacity="0.5"/>
+
+  <!-- Lightning bolt (bright) -->
+  <polygon points="112,55 98,88 108,88 94,120 122,82 110,82 124,55" fill="#FFD600" opacity="0.15"/>
+  <polygon points="112,55 98,88 108,88 94,120 122,82 110,82 124,55" fill="#FFD600" stroke="#FFF176" stroke-width="1" opacity="0.9"/>
+
+  <!-- Rain streaks (heavy) -->
+  <line x1="30" y1="62" x2="23" y2="80" stroke="#78909C" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/>
+  <line x1="48" y1="60" x2="41" y2="78" stroke="#78909C" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/>
+  <line x1="148" y1="62" x2="141" y2="80" stroke="#78909C" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/>
+  <line x1="165" y1="60" x2="158" y2="78" stroke="#78909C" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/>
+  <line x1="180" y1="65" x2="173" y2="83" stroke="#78909C" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/>
+  <line x1="22" y1="92" x2="15" y2="110" stroke="#78909C" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+  <line x1="40" y1="90" x2="33" y2="108" stroke="#78909C" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+  <line x1="155" y1="90" x2="148" y2="108" stroke="#78909C" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+  <line x1="172" y1="92" x2="165" y2="110" stroke="#78909C" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+
+  <!-- Rock / boulder (frog hiding behind) -->
+  <ellipse cx="70" cy="172" rx="52" ry="30" fill="#546E7A"/>
+  <ellipse cx="70" cy="165" rx="48" ry="24" fill="#607D8B"/>
+  <!-- Rock highlight -->
+  <ellipse cx="55" cy="155" rx="18" ry="8" fill="#78909C" opacity="0.5"/>
+
+  <!-- Frog peeking from behind rock -->
+  <!-- Just the top of the head/eyes visible -->
+  <!-- Frog head (partially behind rock) -->
+  <clipPath id="rock-clip">
+    <rect x="0" y="0" width="200" height="200"/>
+  </clipPath>
+  <!-- Frog eyes peeking over top of rock -->
+  <circle cx="58" cy="148" r="10" fill="#4CAF50"/>
+  <circle cx="82" cy="145" r="10" fill="#4CAF50"/>
+  <circle cx="58" cy="148" r="7" fill="white"/>
+  <circle cx="82" cy="145" r="7" fill="white"/>
+  <!-- Pupils looking up at lightning nervously -->
+  <circle cx="58" cy="145" r="3.5" fill="#111"/>
+  <circle cx="82" cy="142" r="3.5" fill="#111"/>
+  <circle cx="59" cy="144" r="1.4" fill="white"/>
+  <circle cx="83" cy="141" r="1.4" fill="white"/>
+
+  <!-- Top of frog head visible -->
+  <path d="M48 152 Q70 138 92 150" fill="#4CAF50"/>
+
+  <!-- Partial body behind rock -->
+  <ellipse cx="68" cy="175" rx="22" ry="10" fill="#4CAF50" opacity="0.5"/>
+
+  <!-- Rock front (overlapping frog body slightly) -->
+  <ellipse cx="70" cy="178" rx="52" ry="18" fill="#607D8B"/>
+
+  <!-- Lightning glow overlay (subtle) -->
+  <ellipse cx="118" cy="88" rx="30" ry="50" fill="#FFD600" opacity="0.06"/>
+</svg>

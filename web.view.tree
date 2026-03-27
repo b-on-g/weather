@@ -1,0 +1,611 @@
+$mol_speck $mol_view
+	theme \$mol_theme_accent
+	sub /
+		<= value null
+
+$mol_button $mol_view
+	enabled true
+	click?event null
+	event_click?event null
+	status? /
+	event *
+		^
+		click?event <=> activate?event <=> event_activate?event null
+		dblclick?event <=> clicks?event null
+		keydown?event <=> key_press?event <=> event_key_press?event null
+	attr *
+		^
+		disabled <= disabled false
+		role \button
+		tabindex <= tab_index 0
+		title <= hint_safe <= hint \
+	sub /$mol_view_content
+		<= title
+	Speck $mol_speck
+		value <= error \
+
+$mol_button_typed $mol_button
+	minimal_height 40
+	minimal_width 40
+
+$mol_button_minor $mol_button_typed
+
+$mol_check $mol_button_minor
+	attr *
+		^
+		mol_check_checked <= checked? false
+		aria-checked <= aria_checked \false
+		role <= aria_role \checkbox
+	sub /$mol_view_content
+		<= Icon null
+		<= label /
+			<= Title $mol_view
+				sub /
+					<= title \
+
+$mol_check_list $mol_view
+	dictionary *
+	Option* $mol_check
+		checked? <=> option_checked*? false
+		label <= option_label* /
+			<= option_title* \
+		enabled <= option_enabled* <= enabled true
+		hint <= option_hint* \
+		minimal_height 24
+	options *
+	keys /string
+	sub <= items /$mol_check
+
+$mol_switch $mol_check_list
+	value? \
+
+$mol_scroll $mol_view
+	scroll_top? 0
+	scroll_left? 0
+	attr *
+		^
+		tabindex <= tabindex -1
+	event *
+		^
+		scroll?event <=> event_scroll?event null
+
+$mol_image $mol_view
+	dom_name \img
+	attr *any
+		^
+		src <= uri \
+		title <= hint
+		alt <= title \
+		loading <= loading \lazy
+		decoding <= decoding \async
+		crossOrigin <= cors null
+		width <= natural_width 0
+		height <= natural_height 0
+	event *any
+		load? <=> load? null
+	minimal_width 16
+	minimal_height 16
+
+$bog_weather_app_hourly_view $mol_view
+	hourly_data null
+	sub /
+		<= Tabs $mol_switch
+			value? <=> tab? \precip
+			options *
+				precip \Осадки
+				wind \Ветер
+				humidity \Влажность
+		<= Scroll $mol_scroll
+			scroll_top 0
+			sub /
+				<= Row $mol_view
+					sub <= hour_items /
+	Hour*0 $bog_weather_app_hourly_item
+		index <= hour_index* 0
+		hourly_data <= hourly_data
+		tab <= tab? \precip
+
+$bog_weather_app_hourly_item $mol_view
+	index 0
+	hourly_data null
+	tab \precip
+	sub /
+		<= Time $mol_view
+			sub / <= time_text \
+		<= Icon $mol_image
+			uri <= icon_uri \
+		<= Temp $mol_view
+			sub / <= temp_text \
+		<= Secondary $mol_view
+			sub / <= secondary_text \
+
+$mol_list $mol_view
+	render_visible_only true
+	render_over 0.1
+	sub <= rows /$mol_view
+		<= Gap_before $mol_view style * paddingTop <= gap_before 0
+		<= Empty $mol_view
+		<= Gap_after $mol_view style * paddingTop <= gap_after 0
+	item_height_min* 1
+	item_width_min* 1
+	view_window_shift? 0
+	view_window /
+		0
+		0
+
+$mol_svg $mol_view
+	dom_name \svg
+	dom_name_space \http://www.w3.org/2000/svg
+	font_size 16
+	font_family \
+	style_size *
+
+$mol_svg_root $mol_svg
+	dom_name \svg
+	attr *
+		^
+		viewBox <= view_box \0 0 100 100
+		preserveAspectRatio <= aspect \xMidYMid
+
+$mol_svg_path $mol_svg
+	dom_name \path
+	attr *
+		^
+		d <= geometry \
+
+
+$mol_icon $mol_svg_root
+	view_box \0 0 24 24
+	minimal_width 16
+	minimal_height 16
+	sub /
+		<= Path $mol_svg_path
+			geometry <= path \
+
+$mol_icon_chevron $mol_icon path \M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z
+
+$mol_check_expand $mol_check
+	Icon $mol_icon_chevron
+	level 0
+	style *
+		^
+		paddingLeft <= level_style \0px
+	checked? <=> expanded? false
+	enabled <= expandable false
+
+$mol_expander $mol_list
+	rows /
+		<= Label $mol_view
+			sub /
+				<= Trigger $mol_check_expand
+					checked? <=> expanded? false
+					expandable <= expandable true
+					label <= label /
+						<= title
+				<= Tools null
+		<= Content $mol_list
+			rows <= content /
+
+$bog_weather_app_daily $mol_list
+	daily_data null
+	rows <= day_rows /
+	Day*0 $bog_weather_app_daily_row
+		index <= day_index* 0
+		daily_data <= daily_data
+
+$bog_weather_app_daily_row $mol_expander
+	index 0
+	daily_data null
+	label /
+		<= Summary $mol_view
+			sub /
+				<= Day_name $mol_view
+					sub / <= date_text \
+				<= Icon $mol_image
+					uri <= icon_uri \
+				<= Temp_min $mol_view
+					sub / <= temp_min_text \
+				<= Bar $mol_view
+				<= Temp_max $mol_view
+					sub / <= temp_max_text \
+	content /
+		<= Details $mol_view
+			sub /
+				<= Detail_sunrise $mol_view
+					sub / <= sunrise_text \
+				<= Detail_sunset $mol_view
+					sub / <= sunset_text \
+				<= Detail_uv $mol_view
+					sub / <= uv_text \
+				<= Detail_wind $mol_view
+					sub / <= wind_text \
+				<= Detail_precip $mol_view
+					sub / <= precip_text \
+
+$mol_ghost $mol_view
+	Sub $mol_view
+
+$mol_follower $mol_ghost
+	Anchor $mol_view
+	align /number
+		-.5
+		-.5
+	offset /number
+		0
+		0
+	style *
+		^
+		transform <= transform \
+
+$mol_pop $mol_view
+	showed? false
+	align_vert \
+	align_hor \
+	align \bottom_center
+	prefer \vert
+	auto /
+		<= bubble null
+	sub /
+		<= Anchor null
+	sub_visible /
+		<= Anchor
+		<= Follower $mol_follower
+			offset <= bubble_offset /number
+				0
+				1
+			align <= bubble_align /number
+				0
+				0
+			Anchor <= Anchor
+			Sub <= Bubble $mol_pop_bubble
+				content <= bubble_content /$mol_view_content
+				height_max <= height_max 9999
+
+$mol_pop_bubble $mol_view
+	sub <= content /$mol_view_content
+	style *
+		^
+		maxHeight <= height_max 9999
+	attr *
+		^
+		tabindex 0
+		popover \manual
+
+$mol_icon_magnify $mol_icon path \M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z
+
+$mol_hotkey $mol_plugin
+	event *
+		^
+		keydown?event <=> keydown?event null
+	key *
+	mod_ctrl false
+	mod_alt false
+	mod_shift false
+
+$mol_nav $mol_plugin
+	cycle? false
+	-
+	mod_ctrl false
+	mod_shift false
+	mod_alt false
+	-
+	keys_x? /
+	keys_y? /
+	-
+	current_x? null
+	current_y? null
+	-
+	event_up?event null
+	event_down?event null
+	event_left?event null
+	event_right?event null
+	event *
+		^
+		keydown?event <=> event_key?event null
+
+$mol_string $mol_view
+	dom_name \input
+	enabled true
+	minimal_height 40
+	autocomplete false
+	selection? /number
+		0
+		0
+	auto /
+		<= selection_watcher null
+		<= error_report null
+	field *
+		^
+		disabled <= disabled false
+		value <= value_changed? <=> value? \
+		placeholder <= hint_visible <= hint \
+		spellcheck <= spellcheck true
+		autocomplete <= autocomplete_native \
+		selectionEnd <= selection_end 0
+		selectionStart <= selection_start 0
+		inputMode <= keyboard \text
+		enterkeyhint <= enter \go
+	attr *
+		^
+		maxlength <= length_max +Infinity
+		type <= type? \text
+	event *
+		^
+		input?event <=> event_change?event null
+	plugins /
+		<= Submit $mol_hotkey
+			mod_ctrl <= submit_with_ctrl false
+			key * enter?event <=> submit?event null
+
+$mol_icon_close $mol_icon path \M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z
+
+$mol_paragraph $mol_view
+	line_height 24
+	letter_width 7
+	width_limit +Infinity
+	row_width 0
+	sub / <= title
+
+$mol_dimmer $mol_paragraph
+	haystack \
+	needle \
+	sub <= parts /$mol_view_content
+	Low* $mol_paragraph
+		sub /
+			<= string* \
+	High* $mol_paragraph
+		sub /
+			<= string* \
+
+$mol_search $mol_pop
+	query? \
+	suggests /string
+	plugins /$mol_plugin
+		^
+		<= Hotkey $mol_hotkey
+			key * escape? <=> clear? null
+		<= Nav $mol_nav
+			keys_y <= nav_components /$mol_view
+			current_y?component <=> nav_focused?component null
+	showed? <=> suggests_showed? false
+	align_hor \right
+	Anchor $mol_view
+		sub <= anchor_content /
+			<= Query $mol_string
+				value? <=> query? \
+				hint <= hint @ \Search...
+				submit?event <=> submit?event null
+				enabled <= enabled true
+				keyboard <= keyboard \search
+				enter <= enter \search
+				bring => bring
+			<= Clear $mol_button_minor
+				hint @ \Clear
+				enabled <= enabled true
+				click?event <=> clear?event null
+				sub /
+					<= Clear_icon $mol_icon_close
+	bubble_content /$mol_view_content
+		<= Bubble_pane $mol_scroll
+			sub /
+				<= Menu $mol_list
+					rows <= menu_items /$mol_view
+	Suggest* $mol_button_minor
+		click?event <=> suggest_select*?event null
+		sub <= suggest_content* /$mol_view_content
+			<= Suggest_label* $mol_dimmer
+				haystack <= suggest_label* \
+				needle <= query? \
+
+$bog_weather_app_search $mol_pop
+	showed? <=> opened? false
+	align \bottom_right
+	event_select? null
+	anchor /
+		<= Trigger $mol_button_minor
+			click? <=> trigger_click? null
+			sub /
+				<= Trigger_icon $mol_icon_magnify
+	bubble /
+		<= Panel $mol_view
+			sub /
+				<= Input $mol_search
+					query? <=> query? \
+				<= Results $mol_list
+					rows <= result_rows /
+	Result*0 $bog_weather_app_search_row
+		location <= result_location* null
+		click? <=> result_click*? null
+
+$bog_weather_app_search_row $mol_button_minor
+	location null
+	sub /
+		<= Name $mol_view
+			sub / <= name_text \
+		<= Country $mol_view
+			sub / <= country_text \
+
+$mol_icon_crosshairs $mol_icon path \M3.05,13H1V11H3.05C3.5,6.83 6.83,3.5 11,3.05V1H13V3.05C17.17,3.5 20.5,6.83 20.95,11H23V13H20.95C20.5,17.17 17.17,20.5 13,20.95V23H11V20.95C6.83,20.5 3.5,17.17 3.05,13M12,5A7,7 0 0,0 5,12A7,7 0 0,0 12,19A7,7 0 0,0 19,12A7,7 0 0,0 12,5Z
+
+$mol_icon_crosshairs_gps $mol_icon path \M12,8A4,4 0 0,1 16,12A4,4 0 0,1 12,16A4,4 0 0,1 8,12A4,4 0 0,1 12,8M3.05,13H1V11H3.05C3.5,6.83 6.83,3.5 11,3.05V1H13V3.05C17.17,3.5 20.5,6.83 20.95,11H23V13H20.95C20.5,17.17 17.17,20.5 13,20.95V23H11V20.95C6.83,20.5 3.5,17.17 3.05,13M12,5A7,7 0 0,0 5,12A7,7 0 0,0 12,19A7,7 0 0,0 19,12A7,7 0 0,0 12,5Z
+
+$bog_theme_auto $mol_plugin
+	themes <= themes_default /
+	theme_light \$mol_theme_light
+	theme_dark \$mol_theme_dark
+	mode? \system
+	mode_next? null
+	theme_next? null
+	theme_prev? null
+	theme_set? null
+	attr * mol_theme <= theme \
+
+$bog_theme_picker_row $mol_button_minor
+	theme_name \
+	title <= theme_name
+	attr *
+		^
+		bog_theme_picker_row_focused <= focused_str \
+	event *
+		^
+		pointerenter?event <=> hover?event null
+
+$bog_theme_picker $mol_scroll
+	theme_auto $bog_theme_auto
+	close? null
+	query?val \
+	focused_index?val -1
+	Theme_row* $bog_theme_picker_row
+		theme_name <= theme_name* \
+		focused <= theme_focused* false
+		click?event <=> theme_select*?event null
+		hover?event <=> theme_hover*?event null
+	sub /
+		<= Content $mol_list rows /
+			<= Search $mol_string
+				value?val <=> query?val
+				hint @ \Just start typing
+			<= Theme_list $mol_list
+				rows <= theme_rows /
+	event *
+		^
+		keydown?event <=> key_down?event null
+
+$mol_icon_white_balance_sunny $mol_icon path \M3.55 19.09L4.96 20.5L6.76 18.71L5.34 17.29M12 6C8.69 6 6 8.69 6 12S8.69 18 12 18 18 15.31 18 12C18 8.68 15.31 6 12 6M20 13H23V11H20M17.24 18.71L19.04 20.5L20.45 19.09L18.66 17.29M20.45 5L19.04 3.6L17.24 5.39L18.66 6.81M13 1H11V4H13M6.76 5.39L4.96 3.6L3.55 5L5.34 6.81L6.76 5.39M1 13H4V11H1M13 20H11V23H13
+
+$mol_icon_weather_night $mol_icon path \M17.75,4.09L15.22,6.03L16.13,9.09L13.5,7.28L10.87,9.09L11.78,6.03L9.25,4.09L12.44,4L13.5,1L14.56,4L17.75,4.09M21.25,11L19.61,12.25L20.2,14.23L18.5,13.06L16.8,14.23L17.39,12.25L15.75,11L17.81,10.95L18.5,9L19.19,10.95L21.25,11M18.97,15.95C19.8,15.87 20.69,17.05 20.16,17.8C19.84,18.25 19.5,18.67 19.08,19.07C15.17,23 8.84,23 4.94,19.07C1.03,15.17 1.03,8.83 4.94,4.93C5.34,4.53 5.76,4.17 6.21,3.85C6.96,3.32 8.14,4.21 8.06,5.04C7.79,7.9 8.75,10.87 10.95,13.06C13.14,15.26 16.1,16.22 18.97,15.95M17.33,17.97C14.5,17.81 11.7,16.64 9.53,14.5C7.36,12.31 6.2,9.5 6.04,6.68C3.23,9.82 3.34,14.64 6.35,17.66C9.37,20.67 14.19,20.78 17.33,17.97Z
+
+$mol_icon_monitor $mol_icon path \M21,16H3V4H21M21,2H3C1.89,2 1,2.89 1,4V16A2,2 0 0,0 3,18H10V20H8V22H16V20H14V18H21A2,2 0 0,0 23,16V4C23,2.89 22.1,2 21,2Z
+
+$bog_theme_toggle $mol_pop
+	theme_auto $bog_theme_auto
+	showed?val false
+	align \bottom_right
+	Anchor $mol_button_minor
+		sub /
+			<= Icon $mol_view
+		hint <= anchor_hint \Переключить тему
+		click?event <=> clicked?event null
+		event *
+			^
+			pointerdown?event <=> press_start?event null
+			pointermove?event <=> press_move?event null
+			pointerup?event <=> press_end?event null
+			pointercancel?event <=> press_cancel?event null
+			lostpointercapture?event <=> press_lost?event null
+	Icon_light $mol_icon_white_balance_sunny
+	Icon_dark $mol_icon_weather_night
+	Icon_system $mol_icon_monitor
+	bubble_content /
+		<= Backdrop $mol_view
+			event *
+				click?event <=> backdrop_click?event null
+		<= Picker $bog_theme_picker
+			theme_auto <= theme_auto
+			close? <=> picker_close? null
+
+$bog_weather_app_hero $mol_view
+	weather_code 0
+	temperature 0
+	apparent_temperature 0
+	temp_max 0
+	temp_min 0
+	is_night false
+	attr *
+		^
+		bog_weather_app_hero_scene <= scene \sunny
+	sub /
+		<= Froggy $mol_image
+			uri <= froggy_uri \
+		<= Temp $mol_view
+			sub /
+				<= temp_text \
+		<= Description $mol_view
+			sub /
+				<= description_text \
+		<= Minmax $mol_view
+			sub /
+				<= minmax_text \
+		<= Feels $mol_view
+			sub /
+				<= feels_text \
+
+$bog_weather_app_details $mol_view
+	wind_speed 0
+	wind_direction 0
+	humidity 0
+	uv_index 0
+	pressure 0
+	sunrise \
+	sunset \
+	sub /
+		<= Wind $bog_weather_app_details_card
+			title \Ветер
+			value <= wind_text \
+		<= Humidity $bog_weather_app_details_card
+			title \Влажность
+			value <= humidity_text \
+		<= UV $bog_weather_app_details_card
+			title \UV-индекс
+			value <= uv_text \
+		<= Pressure $bog_weather_app_details_card
+			title \Давление
+			value <= pressure_text \
+		<= Sunrise $bog_weather_app_details_card
+			title \Восход
+			value <= sunrise_text \
+		<= Sunset $bog_weather_app_details_card
+			title \Закат
+			value <= sunset_text \
+
+$bog_weather_app_details_card $mol_view
+	title \
+	value \
+	sub /
+		<= Title $mol_view
+			sub / <= title
+		<= Value $mol_view
+			sub / <= value
+
+$bog_weather_app $mol_scroll
+	sub /
+		<= Body $mol_list
+			rows /
+				<= Header $mol_view
+					sub /
+						<= City_name $mol_view
+							sub / <= city_name \Москва
+						<= Search $bog_weather_app_search
+							event_select? <=> on_city_select? null
+						<= Geolocate $mol_button_minor
+							click? <=> geolocate? null
+							sub /
+								<= Geolocate_icon $mol_icon_crosshairs_gps
+						<= Theme_toggle $bog_theme_toggle
+							theme_auto <= Theme
+				<= Hero $bog_weather_app_hero
+					weather_code <= current_weather_code 0
+					temperature <= current_temperature 0
+					apparent_temperature <= current_apparent_temperature 0
+					temp_max <= today_temp_max 0
+					temp_min <= today_temp_min 0
+					is_night <= is_night false
+				<= Hourly $bog_weather_app_hourly_view
+					hourly_data <= hourly_data null
+				<= Daily $bog_weather_app_daily
+					daily_data <= daily_data null
+				<= Details $bog_weather_app_details
+					wind_speed <= current_wind_speed 0
+					wind_direction <= current_wind_direction 0
+					humidity <= current_humidity 0
+					uv_index <= current_uv_index 0
+					pressure <= current_pressure 0
+					sunrise <= today_sunrise \
+					sunset <= today_sunset \
+	plugins /
+		<= Theme $bog_theme_auto
+			theme_light \$mol_theme_calm_light
+			theme_dark \$mol_theme_calm_dark
+			themes /
+				\$mol_theme_calm_light
+				\$mol_theme_calm_dark
